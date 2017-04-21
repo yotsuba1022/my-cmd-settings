@@ -26,9 +26,18 @@ colorscheme solarized
 map <C-n> :NERDTreeToggle<CR>
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
-" Start NERDTree when launch vim
-autocmd vimenter * NERDTree
 " --- NERDTree config ---
+
+" --- Syntastic config ---
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" --- Syntastic config ---
 
 " Install pathogen
 execute pathogen#infect()
