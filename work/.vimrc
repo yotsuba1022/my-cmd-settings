@@ -28,7 +28,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 " --- NERDTree config ---
 
-" --- Syntastic config ---
+" --- Syntastic config --- 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
