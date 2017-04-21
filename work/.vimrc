@@ -10,11 +10,16 @@ set showmatch
 set guifont=Source_Code_Pro:h14
 set history=100
 set ruler
-colorscheme ir_black
-set t_Co=256
 
 filetype plugin on
 filetype indent on
+
+" Let Vim support 256 colors
+set t_Co=256
+
+" Solarized colorscheme for Vim
+set background=dark
+colorscheme solarized
 
 " Install pathogen
 execute pathogen#infect()
