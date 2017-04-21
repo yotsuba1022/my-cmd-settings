@@ -15,3 +15,6 @@ set t_Co=256
 
 filetype plugin on
 filetype indent on
+
+" Install pathogen
+execute pathogen#infect()
