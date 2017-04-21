@@ -21,6 +21,15 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
+" --- NERDTree config ---
+" open/close NERTDTree
+map <C-n> :NERDTreeToggle<CR>
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+" Start NERDTree when launch vim
+autocmd vimenter * NERDTree
+" --- NERDTree config ---
+
 " Install pathogen
 execute pathogen#infect()
 
