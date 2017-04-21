@@ -13,6 +13,7 @@ colorscheme ir_black
 set t_Co=256
 execute pathogen#infect()
 
+" Add support for vim session and status bar
 set laststatus=2
 set statusline=%4*%<\ %1*[%F]
 set statusline+=%4*\ %5*[%{&encoding}, " encoding
