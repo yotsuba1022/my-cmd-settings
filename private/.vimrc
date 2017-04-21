@@ -33,6 +33,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Please execute the fllowing line if you encounter some problems when git commit after add this block.
+" git config --global core.editor $(which vim)
 " --- Syntastic config ---
 
 " Install pathogen
