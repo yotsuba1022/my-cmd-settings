@@ -38,6 +38,10 @@ let g:syntastic_check_on_wq = 0
 " git config --global core.editor $(which vim)
 " --- Syntastic config ---
 
+" --- Java Complete2 ---
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" --- Java Complete2 ---
+
 " Install pathogen
 execute pathogen#infect()
 
