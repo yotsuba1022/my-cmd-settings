@@ -7,11 +7,15 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set showmatch
-set guifont=Source_Code_Pro:h14
 set hlsearch
 
 " Let Vim support 256 colors
 set t_Co=256
+
+" --- Airline Status Bar ---
+set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h14
+let g:airline_powerline_fonts = 1
+" --- Airline Status Bar ---
 
 " Solarized colorscheme for Vim
 set background=dark
