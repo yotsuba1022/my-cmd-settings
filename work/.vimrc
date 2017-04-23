@@ -35,7 +35,8 @@ colorscheme solarized
 
 " Define the leader prefix and some hotkeys
 let mapleader = ","
-nmap <leader>w :w!<cr>
+nmap <leader>w :w!<cr>                      " Write file when press ,+w
+map <silent> <leader><CR> :noh<CR>          " Cancel search highlight when press ,+enter
 
 " Quickly insert parenthesis/brackets/etc.:
 inoremap $1 ()<esc>i
