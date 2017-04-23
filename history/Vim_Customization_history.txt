@@ -1,0 +1,59 @@
+Vim改造紀錄
+
+安裝pathogen plugin management:
+1. mkdir -p ~/.vim/autoload ~/.vim/bundle
+2. curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+3. vim ~/.vimrc # 增加下述一行即可
+4. execute pathogen#infect()
+
+Vim color scheme installation steps:
+1. mkdir ~/.vim/colors/
+2. cd ~/.vim/bundle
+3. git clone git://github.com/altercation/vim-colors-solarized.git
+4. cd ~/.vim/bundle/vim-colors-solarized/colors
+5. cp solarized.vim ../../../colors/
+
+NERDTree installation:
+1. cd ~/.vim/bundle
+2. git clone https://github.com/scrooloose/nerdtree
+3. git clone https://github.com/jistr/vim-nerdtree-tabs.git
+4. git clone https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/bundle/nerdtree-git-plugin
+
+Syntastic installation:
+1. git config --global core.editor $(which vim) <- 這行是為了要預防Syntastic可能導致git commit指令壞掉的預防措施
+2. cd ~/.vim/bundle
+3. git clone https://github.com/scrooloose/syntastic
+-> 在公司的話要特別看一下這篇文章的4.2.節, 把.inc關聯到php checker
+
+JavaComplete2
+1. cd ~/.vim/bundle
+2. git clone https://github.com/artur-shaik/vim-javacomplete2.git
+
+SuperTab (可用這個把JavaComplete2的 <Ctrl-x> + <Ctrl-o>直接轉換成按一次tab就好)
+1. git clone https://github.com/ervandew/supertab
+
+vim-fugitive installation (這個沒裝的話, Airline啟動後會看不到branch):
+1. cd ~/.vim/bundle
+2. git clone git://github.com/tpope/vim-fugitive.git
+3. vim -u NONE -c "helptags vim-fugitive/doc" -c q
+
+Airline
+1. cd ~/.vim/bundle
+2. git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+3. git clone https://github.com/powerline/fonts.git  <- 這是要給airline用的字型
+
+字型安裝:
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+
+Airline themes
+1. git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+
+Vim indent guides
+1. git clone git://github.com/nathanaelkane/vim-indent-guides.git
+
+
+移除套件:
+1. cd ~/.vim/bundle/
+2. rm -fr emmet-vim.git -> emmet-vim.git是直接透過git clone抓下來的, 所以直接砍掉就好
