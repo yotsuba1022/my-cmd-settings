@@ -2,6 +2,7 @@
 
 " ----- Basic Settings -----
 syntax on           " Syntax highlighting
+filetype on
 filetype plugin indent on
 set term=builtin_ansi
 set encoding=utf-8
@@ -15,11 +16,16 @@ set ruler           " show cursorposition
 set cursorline      " highlight current line
 set showcmd         " display incomplete commands
 set nocompatible
+set ignorecase      " ignore cases when searching
 set incsearch       " Show search result even if the keyword is still typing
 set hlsearch        " highlight searchresult
 set scrolloff=4     " keep at least 4 lines above or below the cursor
 set history=1000    " keep track of history for 1000 actions
 set showmatch
+" code folding based on indent and syntax
+set foldmethod=indent
+set foldmethod=syntax
+set nofoldenable    " disable code folding by default
 " ----- Basic Settings -----
 
 " SOLARIZED COLORSCHEME FOR VIM
