@@ -2,6 +2,7 @@ if has("syntax")
   syntax on
 endif
 
+set encoding=utf-8
 set number
 set ai
 set tabstop=4
@@ -13,21 +14,47 @@ set ruler
 filetype plugin on
 filetype indent on
 
-" Let Vim support 256 colors
+" SOLARIZED COLORSCHEME FOR VIM
+syntax enable
+set background=dark
 set t_Co=256
+"let g:solarized_termcolors=256
+colorscheme solarized
+" SOLARIZED COLORSCHEME FOR VIM
+
+" Define the leader prefix
+let mapleader = ","
+" Define the leader prefix
+
+" PHP CI file settings
+au BufRead,BufNewFile *.ci set syntax=php
+" PHP CI file settings
+
+" Java file settings
+au BufRead,BufNewFile *.java set expandtab
+au BufRead,BufNewFile *.java set tabstop=4
+au BufRead,BufNewFile *.java set shiftwidth=4
+au BufRead,BufNewFile *.java set autoindent
+" Java file settings
 
 " --- Airline Status Bar ---
+" set status line
+set laststatus=2
+
+" font settings
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h14
 let g:airline_powerline_fonts = 1
+
+" airline theme setting
+let g:airline_theme='luna'
 " --- Airline Status Bar ---
 
-" Solarized colorscheme for Vim
-set background=dark
-colorscheme solarized
 
 " --- NERDTree config ---
 " open/close NERTDTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>m :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<cr>
+
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
 " --- NERDTree config ---

@@ -1,4 +1,5 @@
 set term=builtin_ansi
+set encoding=utf-8
 syntax on
 filetype plugin indent on
 set nocompatible
@@ -9,21 +10,46 @@ set softtabstop=4
 set showmatch
 set hlsearch
 
-" Let Vim support 256 colors
+" SOLARIZED COLORSCHEME FOR VIM
+syntax enable
+set background=dark
 set t_Co=256
+"let g:solarized_termcolors=256
+colorscheme solarized
+" SOLARIZED COLORSCHEME FOR VIM
+
+" Define the leader prefix
+let mapleader = ","
+" Define the leader prefix
+
+" PHP CI file settings
+au BufRead,BufNewFile *.ci set syntax=php
+" PHP CI file settings
+
+" Java file settings
+au BufRead,BufNewFile *.java set expandtab
+au BufRead,BufNewFile *.java set tabstop=4
+au BufRead,BufNewFile *.java set shiftwidth=4
+au BufRead,BufNewFile *.java set autoindent
+" Java file settings
 
 " --- Airline Status Bar ---
+" set status line
+set laststatus=2
+
+" font settings
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h14
 let g:airline_powerline_fonts = 1
-" --- Airline Status Bar ---
 
-" Solarized colorscheme for Vim
-set background=dark
-colorscheme solarized
+" airline theme setting
+let g:airline_theme='luna'
+" --- Airline Status Bar ---
 
 " --- NERDTree config ---
 " open/close NERTDTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>m :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<cr>
+
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
 " --- NERDTree config ---
@@ -37,9 +63,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" Please execute the fllowing line if you encounter some problems when git commit after add this block.
-" git config --global core.editor $(which vim)
 " --- Syntastic config ---
 
 " --- Java Complete2 ---
@@ -49,15 +72,3 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " Install pathogen
 execute pathogen#infect()
 
-" Add support for vim session and status bar
-set laststatus=2
-set statusline=%4*%<\ %1*[%F]
-set statusline+=%4*\ %5*[%{&encoding}, " encoding
-set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
-set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
-highlight User1 ctermfg=red
-highlight User2 term=underline cterm=underline ctermfg=green
-highlight User3 term=underline cterm=underline ctermfg=yellow
-highlight User4 term=underline cterm=underline ctermfg=white
-highlight User5 ctermfg=cyan
-highlight User6 ctermfg=white
