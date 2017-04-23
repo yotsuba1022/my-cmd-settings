@@ -90,6 +90,19 @@ map <leader>nf :NERDTreeFind<cr>
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "∆",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 " --- NERDTree config ---
 
 " --- Syntastic config ---
