@@ -1,9 +1,10 @@
 " ----- Carl's Vim settings -----
+
+" ----- Basic Settings -----
 syntax on           " Syntax highlighting
 filetype plugin indent on
 set term=builtin_ansi
 set encoding=utf-8
-
 set ai              " Auto indent
 set number          " show line numbers
 set tabstop=4       " hitting tab produces 4 columns space
@@ -19,7 +20,7 @@ set hlsearch        " highlight searchresult
 set scrolloff=4     " keep at least 4 lines above or below the cursor
 set history=1000    " keep track of history for 1000 actions
 set showmatch
-
+" ----- Basic Settings -----
 
 " SOLARIZED COLORSCHEME FOR VIM
 syntax enable
@@ -42,6 +43,10 @@ inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 inoremap $t <><esc>i
 " Quickly insert parenthesis/brackets/etc.:
+
+" Supertab support
+let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
+" Supertab support
 
 " Define the leader prefix and some hotkeys
 

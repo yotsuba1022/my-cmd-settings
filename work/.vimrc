@@ -1,4 +1,6 @@
 " ----- Carl's Vim settings (For Yahoo Inc.) -----
+
+" ----- Basic Settings -----
 if has("syntax")
   syntax on
 endif
@@ -21,7 +23,7 @@ set hlsearch        " highlight searchresult
 set scrolloff=4     " keep at least 4 lines above or below the cursor
 set history=1000    " keep track of history for 1000 actions
 set showmatch
-
+" ----- Basic Settings -----
 
 " SOLARIZED COLORSCHEME FOR VIM
 syntax enable
@@ -44,6 +46,10 @@ inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 inoremap $t <><esc>i
 " Quickly insert parenthesis/brackets/etc.:
+
+" Supertab support
+let g:SuperTabDefaultCompletionType = '<C-x><C-o>'
+" Supertab support
 
 " Define the leader prefix and some hotkeys
 
