@@ -26,6 +26,7 @@ set showmatch
 set foldmethod=indent
 set foldmethod=syntax
 set nofoldenable    " disable code folding by default
+let java_highlight_functions = 1
 " ----- Basic Settings -----
 
 " SOLARIZED COLORSCHEME FOR VIM
