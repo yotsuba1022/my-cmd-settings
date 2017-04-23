@@ -1,18 +1,27 @@
+" ----- Carl's Vim settings (For Yahoo Inc.) -----
 if has("syntax")
   syntax on
 endif
 
-set encoding=utf-8
-set number
-set ai
-set tabstop=4
-set shiftwidth=4
-set showmatch
-set history=100
-set ruler
-
 filetype plugin on
 filetype indent on
+
+set ai              " Auto indent
+set number          " show line numbers
+set tabstop=4       " hitting tab produces 4 columns space
+set shiftwidth=4    " indent operations produce 4 columns space
+set softtabstop=4
+set noexpandtab     " don't replace a <tab> with <space>'es
+set ruler           " show cursorposition
+set cursorline      " highlight current line
+set showcmd         " display incomplete commands
+set nocompatible
+set incsearch       " Show search result even if the keyword is still typing
+set hlsearch        " highlight searchresult
+set scrolloff=4     " keep at least 4 lines above or below the cursor
+set history=1000    " keep track of history for 1000 actions
+set showmatch
+
 
 " SOLARIZED COLORSCHEME FOR VIM
 syntax enable
@@ -22,9 +31,21 @@ set t_Co=256
 colorscheme solarized
 " SOLARIZED COLORSCHEME FOR VIM
 
-" Define the leader prefix
+" Define the leader prefix and some hotkeys
 let mapleader = ","
-" Define the leader prefix
+nmap <leader>w :w!<cr>
+
+" Quickly insert parenthesis/brackets/etc.:
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+inoremap $t <><esc>i
+" Quickly insert parenthesis/brackets/etc.:
+
+" Define the leader prefix and some hotkeys
 
 " PHP CI file settings
 au BufRead,BufNewFile *.ci set syntax=php
@@ -44,6 +65,8 @@ set laststatus=2
 " font settings
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h14
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
 
 " airline theme setting
 let g:airline_theme='luna'
@@ -68,6 +91,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 
 " Please execute the fllowing line if you encounter some problems when git commit after add this block.
 " git config --global core.editor $(which vim)

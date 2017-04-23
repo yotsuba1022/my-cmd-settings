@@ -1,26 +1,49 @@
+" ----- Carl's Vim settings -----
+syntax on           " Syntax highlighting
+filetype plugin indent on
 set term=builtin_ansi
 set encoding=utf-8
-syntax on
-filetype plugin indent on
-set nocompatible
-set number
-set tabstop=4
-set shiftwidth=4
+
+set ai              " Auto indent
+set number          " show line numbers
+set tabstop=4       " hitting tab produces 4 columns space
+set shiftwidth=4    " indent operations produce 4 columns space
 set softtabstop=4
+set noexpandtab     " don't replace a <tab> with <space>'es
+set ruler           " show cursorposition
+set cursorline      " highlight current line
+set showcmd         " display incomplete commands
+set nocompatible
+set incsearch       " Show search result even if the keyword is still typing
+set hlsearch        " highlight searchresult
+set scrolloff=4     " keep at least 4 lines above or below the cursor
+set history=1000    " keep track of history for 1000 actions
 set showmatch
-set hlsearch
+
 
 " SOLARIZED COLORSCHEME FOR VIM
 syntax enable
 set background=dark
 set t_Co=256
-"let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 colorscheme solarized
 " SOLARIZED COLORSCHEME FOR VIM
 
-" Define the leader prefix
+" Define the leader prefix and some hotkeys
 let mapleader = ","
-" Define the leader prefix
+nmap <leader>w :w!<cr>
+
+" Quickly insert parenthesis/brackets/etc.:
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+inoremap $t <><esc>i
+" Quickly insert parenthesis/brackets/etc.:
+
+" Define the leader prefix and some hotkeys
 
 " PHP CI file settings
 au BufRead,BufNewFile *.ci set syntax=php
@@ -40,6 +63,8 @@ set laststatus=2
 " font settings
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h14
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
 
 " airline theme setting
 let g:airline_theme='luna'
@@ -63,6 +88,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 " --- Syntastic config ---
 
 " --- Java Complete2 ---
