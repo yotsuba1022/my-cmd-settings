@@ -124,7 +124,7 @@ let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 " --- Syntastic config ---
 
 " --- Java Complete2 ---
-" autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " --- Java Complete2 ---
 
 " Install pathogen
