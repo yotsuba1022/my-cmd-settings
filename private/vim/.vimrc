@@ -105,22 +105,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 " --- NERDTree config ---
 
-" --- Syntastic config ---
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-" --- Syntastic config ---
-
-" --- Java Complete2 ---
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-" --- Java Complete2 ---
-
 " Install pathogen
 execute pathogen#infect()
 
